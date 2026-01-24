@@ -48,8 +48,8 @@ header {
   margin-bottom: 15px;
 }
 
-/* BUTTON */
-button {
+/* THEME BUTTON ONLY */
+.theme-btn {
   background-color: #111;
   color: #fff;
   border: none;
@@ -60,12 +60,12 @@ button {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
+.theme-btn:hover {
   background-color: #333;
   transform: scale(1.05);
 }
 
-/* DROPDOWN SECTION */
+/* DROPDOWN CARD */
 .dropdown {
   background-color: #ffffff;
   border-radius: 20px;
@@ -74,28 +74,29 @@ button:hover {
   overflow: hidden;
 }
 
-/* DROPDOWN BUTTON */
+/* DROPDOWN BUTTON (NO GLOBAL BUTTON STYLES) */
 .dropdown-btn {
+  all: unset;
   width: 100%;
-  background: none;
-  color: #111;
-  text-align: left;
+  display: block;
+  cursor: pointer;
+
   font-size: 20px;
   font-weight: bold;
+  color: #111;
+
   padding: 20px 26px;
-  border-radius: 0;
-  cursor: pointer;
 }
 
 .dropdown-btn:hover {
   background-color: #f2f2f2;
 }
 
-/* DROPDOWN ARROW */
+/* ARROW */
 .dropdown-btn::after {
   content: "▾";
   float: right;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .dropdown.active .dropdown-btn::after {
@@ -110,9 +111,8 @@ button:hover {
   padding: 0 26px;
 }
 
-/* OPEN STATE */
 .dropdown.active .dropdown-content {
-  max-height: 500px;
+  max-height: 600px;
   padding-bottom: 20px;
 }
 
@@ -127,7 +127,6 @@ ul li {
   margin-bottom: 12px;
   padding: 14px 18px;
   border-radius: 14px;
-  color: #333;
   line-height: 1.4;
   transition: transform 0.2s, background-color 0.2s;
 }
@@ -157,10 +156,9 @@ body.dark #course-year {
   color: #aaa;
 }
 
-/* Dropdown header contrast fix */
+/* Dropdown dark */
 body.dark .dropdown-btn {
   color: #f1f1f1;
-  background-color: #1e1e1e;
   border-bottom: 1px solid #333;
 }
 
@@ -168,7 +166,7 @@ body.dark .dropdown-btn:hover {
   background-color: #222;
 }
 
-/* List items dark */
+/* List dark */
 body.dark ul li {
   background-color: #2a2a2a;
   color: #eaeaea;
@@ -178,12 +176,12 @@ body.dark ul li:hover {
   background-color: #333;
 }
 
-/* Button dark */
-body.dark button {
+/* Theme button dark */
+body.dark .theme-btn {
   background-color: #f1f1f1;
   color: #111;
 }
 
-body.dark button:hover {
+body.dark .theme-btn:hover {
   background-color: #dcdcdc;
 }
