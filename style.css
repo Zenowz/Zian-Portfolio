@@ -1,56 +1,60 @@
-/* Reset & base */
+/* RESET */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* BODY */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f2f2f2; /* light gray */
+  background-color: #f2f2f2;
   color: #222;
-  margin: 0;
   padding: 20px;
+  max-width: 900px;
+  margin: auto;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header Card */
+/* HEADER */
 header {
   background-color: #ffffff;
   text-align: center;
-  padding: 25px;
-  border-radius: 16px;
+  padding: 28px;
+  border-radius: 20px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Name */
 #name {
-  margin-bottom: 10px;
   font-size: 28px;
+  margin-bottom: 12px;
 }
 
-/* Profile Image */
 #profile-img {
   width: 140px;
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #e0e0e0;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
-/* Course text */
 #course-year {
   color: #666;
   margin-bottom: 15px;
 }
 
-/* Button */
+/* BUTTON */
 button {
   background-color: #111;
   color: #fff;
   border: none;
-  padding: 10px 22px;
-  border-radius: 25px;
+  padding: 10px 26px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s, transform 0.2s;
@@ -61,46 +65,72 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Sections */
-section {
+/* DROPDOWN SECTION */
+.dropdown {
   background-color: #ffffff;
-  padding: 20px 25px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
-/* Section titles */
-section h2 {
-  margin-bottom: 15px;
+/* DROPDOWN BUTTON */
+.dropdown-btn {
+  width: 100%;
+  background: none;
+  color: #111;
+  text-align: left;
   font-size: 20px;
-  border-left: 5px solid #111;
-  padding-left: 10px;
+  font-weight: bold;
+  padding: 20px 26px;
+  border-radius: 0;
 }
 
-/* Lists */
+.dropdown-btn:hover {
+  background-color: #f2f2f2;
+  transform: none;
+}
+
+/* DROPDOWN CONTENT */
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 26px;
+}
+
+/* OPEN STATE */
+.dropdown.active .dropdown-content {
+  max-height: 500px;
+  padding-bottom: 20px;
+}
+
+/* LIST */
 ul {
   list-style: none;
-  padding: 0;
+  margin-top: 15px;
 }
 
 ul li {
   background-color: #f5f5f5;
   margin-bottom: 10px;
-  padding: 12px 15px;
-  border-radius: 12px;
-  color: #333;
+  padding: 14px 18px;
+  border-radius: 14px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+ul li:hover {
+  transform: translateX(5px);
 }
 
 /* ===== DARK MODE ===== */
-
 body.dark {
   background-color: #121212;
   color: #f1f1f1;
 }
 
 body.dark header,
-body.dark section {
+body.dark .dropdown {
   background-color: #1e1e1e;
   box-shadow: none;
 }
@@ -109,9 +139,21 @@ body.dark #course-year {
   color: #aaa;
 }
 
+body.dark .dropdown-btn {
+  color: #f1f1f1;
+}
+
+body.dark .dropdown-btn:hover {
+  background-color: #2a2a2a;
+}
+
 body.dark ul li {
   background-color: #2a2a2a;
   color: #eaeaea;
+}
+
+body.dark ul li:hover {
+  background-color: #333;
 }
 
 body.dark button {
