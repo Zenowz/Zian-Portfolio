@@ -105,13 +105,11 @@ header {
 .dropdown-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.6s ease, padding 0.3s ease;
   padding: 0 26px;
+  transition: max-height 0.5s ease;
 }
 
-/* Increased max-height so all projects fit */
 .dropdown.active .dropdown-content {
-  max-height: 3000px;
   padding-bottom: 20px;
 }
 
@@ -132,7 +130,7 @@ ul li {
 
 ul li strong {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 ul li:hover {
